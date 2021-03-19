@@ -1,6 +1,21 @@
 version: "3.7"
- 
+
 services:
+  caddy:
+    image: caddy:alpine
+    restart: on-failure
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - caddy
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddydata:/data
+      - ./caddyconfig:/config
+      - ./caddylogs:/var/log/caddy
+      - ./wordpress:/var/www/html
+      
   wordpress:
     image: wordpress:php8.0-fpm-alpine
     restart: on-failure
@@ -75,6 +90,9 @@ secrets:
 volumes:
   wordpress:
   db:
+  caddydata:
+  caddyconfig:
+  caddylogs:
 networks:
   caddy:
     external: true
