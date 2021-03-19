@@ -27,6 +27,11 @@ You now have a working WordPress installation served using the Caddy web server.
 
 You can read more about Caddy and it's unique features, configuration directives for the Caddyfile in the official Caddy's website https://caddyserver.com/
 
+## Manage MariaDB using Adminer
+You can manage your MariaDB database using Adminer container that was included in the repository.
+
+Open the web browser and enter dbadmin.example.com to open Adminer interface. Use root account and myswl_root_password to log into it.
+
 ## Remove WordPress and Cleanup
 Use command ```docker-compose down``` removes the containers, but preserves your WordPress database.
 
