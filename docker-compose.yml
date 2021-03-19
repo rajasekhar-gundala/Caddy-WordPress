@@ -63,7 +63,6 @@ services:
       - mysql_db_password
       - mysql_root_password
     environment:
-      - MYSQL_USER_FILE=/run/secrets/mysql_user
       - MYSQL_DATABASE_FILE=/run/secrets/mysql_database
       - MYSQL_PASSWORD_FILE=/run/secrets/mysql_db_password
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
@@ -81,8 +80,6 @@ secrets:
     file: ./mysql_db_password.txt
   wordpress_table_prefix:
     file: ./wordpress_table_prefix.txt
-  mysql_user:
-    file: ./mysql_user.txt
   mysql_database:
     file: ./mysql_database.txt
   mysql_root_password:
