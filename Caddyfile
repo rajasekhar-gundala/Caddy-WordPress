@@ -1,10 +1,7 @@
 {
     email you@example.com
     cert_issuer acme
-    # Production acme directory
     acme_ca https://acme-v02.api.letsencrypt.org/directory
-    # Staging acme directory
-    #acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
     servers {
         protocol {
             experimental_http3
