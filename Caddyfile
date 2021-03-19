@@ -1,0 +1,59 @@
+{
+    email you@example.com
+    cert_issuer acme
+    # Production acme directory
+    acme_ca https://acme-v02.api.letsencrypt.org/directory
+    # Staging acme directory
+    #acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+    servers {
+        protocol {
+            experimental_http3
+            allow_h2c
+            strict_sni_host
+        }
+        max_header_size 16384
+    }
+}
+
+dbadmin.example.com {
+    log {
+        output file /var/log/caddy/dbadmin.log {
+            roll_size 20mb
+            roll_keep 2
+            roll_keep_for 6h
+        }
+        format console
+        level error
+    }
+    reverse_proxy adminer:8080
+    encode gzip zstd
+}
+
+example.com {
+    log {
+        output file /var/log/caddy/wordpress.log {
+            roll_size 20mb
+            roll_keep 2
+            roll_keep_for 6h
+        }
+        format console
+        level error
+    }
+    root * /var/www/html
+    php_fastcgi wordpress:9000
+    file_server
+    
+    #Cache
+    @cachedFiles {
+        path *.webp *.jpg *.jpeg *.png *.gif *.ico *.js *.css *.woff *.woff2 *.ttf
+    }
+    header @cachedFiles Cache-Control "public, max-age=604800, must-revalidate"
+    
+    #Protect WP Directories
+    @disallowed {
+        path /xmlrpc.php
+        path *.sql
+        path /wp-content/uploads/*.php
+    }
+    rewrite @disallowed '/index.php'
+}
