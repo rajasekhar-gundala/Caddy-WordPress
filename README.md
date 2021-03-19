@@ -18,6 +18,17 @@ make sure you created caddyconfig, caddydata and caddylogs folders in the drirec
 
 Also create wordpress and db folders as well in the same directory to persist WordPress and MariaDB data.
 
+Please make sure you have below secret files created in the directory
+
+wordpress_db_host.txt \
+wordpress_db_user.txt \
+wordpress_db_name.txt \
+mysql_db_password.txt \
+wordpress_table_prefix.txt \
+mysql_user.txt \
+mysql_database.txt \
+mysql_root_password.txt 
+
 ## Install or Set up WordPress
 Clone or Download this repository. Once after getting the repository, run ```docker-compose up -d``` and wait for the containers to configure the WordPress site.
 
