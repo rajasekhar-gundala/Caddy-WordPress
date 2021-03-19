@@ -18,7 +18,7 @@ make sure you created caddyconfig, caddydata and caddylogs folders in the drirec
 
 Also create wordpress and db folders as well in the same directory to persist WordPress and MariaDB data.
 
-Please make sure you have below secret files created in the directory
+***Please make sure you have below secret files created in the directory***
 
 wordpress_db_host.txt \
 wordpress_db_user.txt \
