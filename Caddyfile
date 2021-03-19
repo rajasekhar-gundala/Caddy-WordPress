@@ -6,7 +6,6 @@
         protocol {
             experimental_http3
             allow_h2c
-            strict_sni_host
         }
         max_header_size 16384
     }
