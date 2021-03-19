@@ -1,0 +1,80 @@
+version: "3.7"
+ 
+services:
+  wordpress:
+    image: wordpress:php8.0-fpm-alpine
+    restart: on-failure
+    depends_on:
+      - db
+    volumes:
+      - ./wordpress:/var/www/html
+    secrets:
+      - wordpress_db_host
+      - wordpress_db_user
+      - wordpress_db_name
+      - mysql_db_password
+      - wordpress_table_prefix
+    environment:
+      - WORDPRESS_DB_HOST_FILE=/run/secrets/wordpress_db_host
+      - WORDPRESS_DB_USER_FILE=/run/secrets/wordpress_db_user
+      - WORDPRESS_DB_NAME_FILE=/run/secrets/wordpress_db_name
+      - WORDPRESS_DB_PASSWORD_FILE=/run/secrets/mysql_db_password
+      - WORDPRESS_TABLE_PREFIX_FILE=/run/secrets/wordpress_table_prefix
+    networks:
+      - caddy
+    ports:
+      - "9000:9000"
+
+  adminer:
+    image: adminer
+    restart: on-failure
+    depends_on:
+      - db
+    ports:
+      - '8080:8080'
+    environment:
+      - PMA_HOST=db:3306
+    networks:
+      - caddy
+      
+  db:
+    image: mariadb:latest
+    restart: on-failure
+    volumes:
+      - ./db:/var/lib/mysql
+    secrets:
+      - mysql_user
+      - mysql_database
+      - mysql_db_password
+      - mysql_root_password
+    environment:
+      - MYSQL_USER_FILE=/run/secrets/mysql_user
+      - MYSQL_DATABASE_FILE=/run/secrets/mysql_database
+      - MYSQL_PASSWORD_FILE=/run/secrets/mysql_db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql_root_password
+    command: ["mysqld", "--wait_timeout=28800", "--interactive_timeout=28800", "--max_allowed_packet=256M", "--transaction-isolation=READ-COMMITTED", "--binlog-format=ROW"]
+    networks:
+      - caddy 
+secrets:
+  wordpress_db_host:
+    file: ./wordpress_db_host.txt
+  wordpress_db_user:
+    file: ./wordpress_db_user.txt
+  wordpress_db_name:
+    file: ./wordpress_db_name.txt
+  mysql_db_password:
+    file: ./mysql_db_password.txt
+  wordpress_table_prefix:
+    file: ./wordpress_table_prefix.txt
+  mysql_user:
+    file: ./mysql_user.txt
+  mysql_database:
+    file: ./mysql_database.txt
+  mysql_root_password:
+    file: ./mysql_root_password.txt 
+volumes:
+  wordpress:
+  db:
+networks:
+  caddy:
+    external: true
