@@ -20,14 +20,13 @@ Also create wordpress and db folders as well in the same directory to persist Wo
 
 ***Please make sure you have below secret files created in the directory***
 
-wordpress_db_host.txt \
-wordpress_db_user.txt \
-wordpress_db_name.txt \
-mysql_db_password.txt \
-wordpress_table_prefix.txt \
-mysql_user.txt \
-mysql_database.txt \
-mysql_root_password.txt 
+wordpress_db_host.txt -->It should have db host name. Here it is db:3306 \
+wordpress_db_user.txt -->It shoould have user name to log into db container. Here it is someuser \
+wordpress_db_name.txt -->It shoould have database name for WordPress container. Here it is wordpress \
+mysql_db_password.txt -->It shoould have password to connect and utilise wordpress database. Here it is somesecret \
+wordpress_table_prefix.txt -->It shoould have table prefix for the databases for security purposes. Here it is sometext_ \
+mysql_database.txt -->It shoould have database name for WordPress container. Here it is wordpress \
+mysql_root_password.txt -->It shoould have user name to manage MariaDB container through Adminer. Here it is root 
 
 ## Install or Set up WordPress
 Clone or Download this repository. Once after getting the repository, run ```docker-compose up -d``` and wait for the containers to configure the WordPress site.
