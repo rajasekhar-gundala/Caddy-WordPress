@@ -1,0 +1,1 @@
+store caddy config data
