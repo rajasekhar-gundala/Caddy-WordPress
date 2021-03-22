@@ -29,7 +29,19 @@ mysql_database.txt -->It shoould have database name for WordPress container. Her
 mysql_root_password.txt -->It shoould have user name to manage MariaDB container through Adminer. Here it is root 
 
 ## Install or Set up WordPress
-Clone or Download this repository. Once after getting the repository, run ```docker-compose up -d``` and wait for the containers to configure the WordPress site.
+Clone or Download this repository. Once after getting the repository, there is a script file "start-wordpress.sh" if you want to automate whole process.
+
+Change the file permission with 777
+
+```sudo chmod 777 start-wordpressr.sh```
+
+Run the script with sudo.
+
+```sudo ./start-wordpress.sh```
+
+If you want to proceed manual process; please make sure pre-requisites installed to proceed further.
+
+Once after getting the repository, use ```docker-compose up -d``` and wait for the containers to configure the WordPress site.
 
 Open the domain, example.com in the web browser. Create an admin account and click the Install WordPress button.
 
