@@ -18,7 +18,7 @@ make sure you created **caddyconfig**, **caddydata** and **caddylogs** folders i
 
 Also create **wordpress** and **db** folders as well in the same directory to persist WordPress and MariaDB data.
 
-***Please make sure you have below secret files created in the directory***
+If you are cloning the repository, then no need to create below files. or else ***Please make sure you have below secret files created in the directory***
 
 wordpress_db_host.txt -->It should have db host name. Here it is db:3306 \
 wordpress_db_user.txt -->It shoould have user name to log into db container. Here it is someuser \
