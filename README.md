@@ -14,9 +14,9 @@ A container for Adminer;
 ## Pre-Requisites
 Make sure Docker and Docker Compose installed on the server where you are going to install the stack.
 
-make sure you created caddyconfig, caddydata and caddylogs folders in the drirectory where you have docker-compose file. ***Caddy's data directory is most important one, don't forget to persist it. If you forgot to persist, you will hit rate limit for getting Letsencrypt certificates.***
+make sure you created **caddyconfig**, **caddydata** and **caddylogs** folders in the drirectory where you have docker-compose file. ***Caddy's data directory is most important one, don't forget to persist it. If you forgot to persist, you will hit rate limit for getting Letsencrypt certificates.***
 
-Also create wordpress and db folders as well in the same directory to persist WordPress and MariaDB data.
+Also create **wordpress** and **db** folders as well in the same directory to persist WordPress and MariaDB data.
 
 ***Please make sure you have below secret files created in the directory***
 
