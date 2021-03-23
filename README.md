@@ -33,7 +33,8 @@ mysql_database.txt -->It shoould have database name for WordPress container. Her
 mysql_root_password.txt -->It shoould have user name to manage MariaDB container through Adminer. Here it is root 
 
 ## Install or Set up WordPress
-> Please make sure to update ```your email``` and ```example.com``` in Caddyfile before proceeding to install WordPresss \
+> Please make sure to update ```your email``` and ```example.com``` in Caddyfile before proceeding to install WordPresss
+
 > Also make sure that DNS entry updated with IP of the server where you are installing the script
 
 Clone or Download this repository. Once after getting the repository, there is a script file "start-wordpress.sh" if you want to automate whole process.
