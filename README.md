@@ -13,7 +13,7 @@ A container for Adminer;
 
 ## Pre-Requisites
 
-> ```start-wordpress.sh`` script will install docker and docker compose if you don't have them on the server
+> ```start-wordpress.sh``` script will install docker and docker compose if you don't have them on the server
 
 If you want to proceed manually, make sure Docker and Docker Compose installed on the server where you are going to install the stack.
 
