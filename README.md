@@ -53,7 +53,7 @@ Once after getting the repository, use ```docker-compose up -d``` and wait for t
 
 Open the domain, example.com in the web browser. Create an admin account and click the Install WordPress button.
 
-You now have a working WordPress installation served using the Caddy web server. Caddy will automatically obtain SSL certificates from Let’s Encrypt, serve your site over a secure connection, and use HTTP/2 and Gzip compression to serve the website faster.
+> You now have a working WordPress installation served using the Caddy web server. Caddy will automatically obtain SSL certificates from Let’s Encrypt, serve your site over a secure connection, and use HTTP/2 and Gzip compression to serve the website faster.
 
 > You can read more about Caddy and it's unique features, configuration directives for the Caddyfile in the official Caddy's website https://caddyserver.com/
 
