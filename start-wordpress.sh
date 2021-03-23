@@ -46,30 +46,30 @@ fi
     echo "Docker Compose installed successfully"
 
 # Add the hostname to /etc/hosts
-if [ "$(grep -m1 "example.com" /etc/hosts)" = "" ]; then
-    echo "Adding example.com to /etc/hosts"
-fi
+#if [ "$(grep -m1 "example.com" /etc/hosts)" = "" ]; then
+#    echo "Adding example.com to /etc/hosts"
+#fi
 
 #Install WordPress using Docker Compose
-git clone https://github.com/rajaseg/caddy-wordpress.git
+#git clone https://github.com/rajaseg/caddy-wordpress.git
 
-cd caddy-wordpress || return
+#cd caddy-wordpress || return
 
 docker-compose up -d
 
     echo "WordPress installed successfully; Browse example.com to proceed further"
 
 #Stop site; Stop the containers
-docker-compose down
+#docker-compose down
 
-    echo "example.com stopped successfully; Start it again using docker-compose up -d"
+#    echo "example.com stopped successfully; Start it again using docker-compose up -d"
 
 #Start site; Start the containers again
-docker-compose up -d
+#docker-compose up -d
 
-    echo "example.com started successfully; Use docker-compose down --volumes if you want to remove exampe.com permanently"
+ #   echo "example.com started successfully; Use docker-compose down --volumes if you want to remove exampe.com permanently"
 
 #Delete the site; remove everything from the server, i.e containers, network, WordPress data and MariaDB data
-docker-compose down --volumes
+#docker-compose down --volumes
 
-    echo "example.com deleted successfully"
+ #   echo "example.com deleted successfully"
