@@ -1,5 +1,5 @@
 {
-    email you@example.com
+    email itsraj@outlook.com
     cert_issuer acme
     acme_ca https://acme-v02.api.letsencrypt.org/directory
     servers {
@@ -11,7 +11,7 @@
     }
 }
 
-dbadmin.example.com {
+dbadmin.mahilakart.com {
     log {
         output file /var/log/caddy/dbadmin.log {
             roll_size 20mb
@@ -22,10 +22,10 @@ dbadmin.example.com {
         level error
     }
     reverse_proxy adminer:8080
-    encode gzip zstd
+    encode gzip
 }
 
-example.com {
+support.mahilakart.com {
     log {
         output file /var/log/caddy/wordpress.log {
             roll_size 20mb
@@ -38,6 +38,7 @@ example.com {
     root * /var/www/html
     php_fastcgi wordpress:9000
     file_server
+    encode gzip
     
     #Cache
     @cachedFiles {
