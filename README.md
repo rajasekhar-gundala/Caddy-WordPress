@@ -22,7 +22,8 @@ If you are cloning the repository, then no need to create below files. or else *
 
 wordpress_db_host.txt -->It should have db host name. Here it is db:3306 \
 wordpress_db_user.txt -->It shoould have user name to log into db container. Here it is someuser \
-wordpress_db_name.txt -->It shoould have database name for WordPress container. Here it is wordpress \
+wordpress_db_name.txt -->It shoould have database name for WordPress container. Here it is wordpress-user \
+mysql_db_user.txt -->It should be same as wordpress_db_name.txt \
 mysql_db_password.txt -->It shoould have password to connect and utilise wordpress database. Here it is somesecret \
 wordpress_table_prefix.txt -->It shoould have table prefix for the databases for security purposes. Here it is sometext_ \
 mysql_database.txt -->It shoould have database name for WordPress container. Here it is wordpress \
