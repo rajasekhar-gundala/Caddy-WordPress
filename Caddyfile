@@ -1,5 +1,5 @@
 {
-    email itsraj@outlook.com
+    email you@example.com
     cert_issuer acme
     acme_ca https://acme-v02.api.letsencrypt.org/directory
     servers {
@@ -11,7 +11,7 @@
     }
 }
 
-dbadmin.mahilakart.com {
+dbadmin.example.com {
     log {
         output file /var/log/caddy/dbadmin.log {
             roll_size 20mb
@@ -25,7 +25,7 @@ dbadmin.mahilakart.com {
     encode gzip
 }
 
-support.mahilakart.com {
+example.com {
     log {
         output file /var/log/caddy/wordpress.log {
             roll_size 20mb
