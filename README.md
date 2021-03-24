@@ -1,7 +1,7 @@
 # Caddy-Wordpress
 Deploy WordPress Behind Caddy 2.3.0 using Docker Compose
 
-> Clone the repository, git clone https://github.com/rajaseg/caddy-WordPress and cd caddy-WordPress go to Install step to setup WordPress
+> Clone the repository, ```git clone https://github.com/rajaseg/caddy-WordPress``` and cd ```caddy-WordPress``` go to Install step to setup WordPress
 
 ## Contents of the Repository
 This repository contains WordPress application running behind Caddy, supported by Docker and orchestrated by Docker Compose.
