@@ -73,7 +73,7 @@ Run the script with sudo.
 
 If you want to stop the containers manully...
 
-Use command ```docker-compose down``` to removes the containers, but preserves your WordPress database.
+Use command ```sudo docker-compose down``` to removes the containers, but preserves your WordPress database.
 
 ## Remove WordPress and Cleanup
 Change the file permission with 777 for ```delete-wordpress.sh```
@@ -86,5 +86,5 @@ Run the script with sudo.
 
 If you want to remove manully...
 
-Use command ```docker-compose down --volumes``` to remove everything from the server, i.e containers, network, WordPress data and MariaDB data.
+Use command ```sudo docker-compose down --volumes``` to remove everything from the server, i.e containers, network, WordPress data and MariaDB data.
 
