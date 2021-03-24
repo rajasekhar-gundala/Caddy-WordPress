@@ -62,16 +62,29 @@ You can manage your MariaDB database using Adminer container that was included i
 
 Open the web browser and enter dbadmin.example.com to open Adminer interface. Use root account and myswl_root_password to log into it.
 
-## Remove WordPress and Cleanup
+## Stop the containers
 Change the file permission with 777 for ```stop-wordpress.sh```
 
-```sudo chmod 777 stop-wordpressr.sh```
+```sudo chmod 777 stop-wordpress.sh```
 
 Run the script with sudo.
 
 ```sudo ./stop-wordpress.sh```
 
+If you want to stop the containers manully...
+
+Use command ```docker-compose down``` to removes the containers, but preserves your WordPress database.
+
+## Remove WordPress and Cleanup
+Change the file permission with 777 for ```delete-wordpress.sh```
+
+```sudo chmod 777 delete-wordpress.sh```
+
+Run the script with sudo.
+
+```sudo ./delete-wordpress.sh```
+
 If you want to remove manully...
 
-1. Use command ```docker-compose down``` removes the containers, but preserves your WordPress database.
-2. Use command ```docker-compose down --volumes``` to remove everything from the server, i.e containers, network, WordPress data and MariaDB data.
+Use command ```docker-compose down --volumes``` to remove everything from the server, i.e containers, network, WordPress data and MariaDB data.
+
