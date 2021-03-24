@@ -41,7 +41,7 @@ Clone or Download this repository. Once after getting the repository, there is a
 
 Change the file permission with 777
 
-```sudo chmod 777 start-wordpressr.sh```
+```sudo chmod 777 start-wordpress.sh```
 
 Run the script with sudo.
 
